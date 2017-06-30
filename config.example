@@ -1,0 +1,16 @@
+# This file serves to specify global settings that affect the entire application. If defaults are fine,
+# defining custom values is not necessary. Only declare the values you wish to override! Declare each key=value
+# pair on a single line.
+#
+# Ex: prefix=!
+#
+#       AVAILABLE SETTINGS
+# -- settingName : default value --
+#
+# prefix : !
+# replyUnknownError : false
+# replyArgumentError : true
+# replyPermissionError : false
+# replyThrottleError : true
+# rolesOnJoin : null
+#

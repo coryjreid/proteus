@@ -1,0 +1,27 @@
+### Proteus Specific ###
+config
+
+### Intellij ###
+.idea
+*.iml
+out
+
+### Java ###
+# Compiled class file
+*.class
+META-INF
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Gradle ###
+.gradle
+build
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar

@@ -1,0 +1,43 @@
+plugins {
+    id'java'
+    id'application'
+    id'com.github.johnrengelman.shadow' version '1.2.4'
+}
+
+mainClassName = 'com.coryjreid.proteus.Proteus'
+
+version '1.0'
+def jdaVersion = '3.+'
+def lavaVersion = '1.+'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Proteus Discord Bot',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+    baseName = project.name + '-fat'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+dependencies {
+    compile "net.dv8tion:JDA:$jdaVersion"
+    compile "com.sedmelluq:lavaplayer:$lavaVersion"
+    compile "com.martiansoftware:jsap:2.+"
+    compile "org.postgresql:postgresql:42.1.1.jre7"
+    compile 'com.mashape.unirest:unirest-java:1.4.9'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+task stage {
+    dependsOn installDist
+}
