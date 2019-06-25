@@ -37,7 +37,6 @@ public class Proteus
                     .addEventListener(new MessageHandler(
                             new Ping(),
                             new Help(),
-                            new Tacos(),
                             new Poll(),
                             new Kitty(),
                             new Ban(),
